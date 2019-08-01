@@ -20,5 +20,4 @@ class MovieListFragment : Fragment() {
         return binding.root
     }
 
-
 }
