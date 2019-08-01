@@ -34,7 +34,6 @@
                 android:paddingBottom="6dp"
                 android:paddingStart="6dp"/>
 
-
         <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lav_star_loading"
                 android:layout_width="wrap_content"

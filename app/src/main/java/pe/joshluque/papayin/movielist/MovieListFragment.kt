@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 
 import pe.joshluque.papayin.databinding.FragmentMovieListBinding
 
@@ -24,6 +26,13 @@ class MovieListFragment : Fragment() {
         binding.viewModel = viewModel
         binding.rvMovie.adapter = MovieGridAdapter(MovieGridAdapter.OnClickListener {
             viewModel.displayMovieDetails(it)
+        })
+
+        viewModel.navigateToSelectedMovie.observe(this, Observer {
+            if ( null != it ) {
+                this.findNavController().navigate(MovieListFragmentDirections.actionMovieListFragmentToMovieDetailFragment(it))
+                viewModel.displayMovieDetailsComplete()
+            }
         })
 
         return binding.root

@@ -29,6 +29,9 @@ class MovieListViewModel(application: Application) : AndroidViewModel(applicatio
     val movies: LiveData<List<Movie>>
         get() = _movies
 
+    private val _navigateToSelectedMovie = MutableLiveData<Movie>()
+    val navigateToSelectedMovie: LiveData<Movie>
+        get() = _navigateToSelectedMovie
 
     init {
         getMovies()
@@ -56,6 +59,10 @@ class MovieListViewModel(application: Application) : AndroidViewModel(applicatio
     }
 
     fun displayMovieDetails(movie: Movie) {
+        _navigateToSelectedMovie.value = movie
+    }
 
+    fun displayMovieDetailsComplete() {
+        _navigateToSelectedMovie.value = null
     }
 }
