@@ -4,6 +4,10 @@
 
     <data>
 
+        <variable
+                name="viewModel"
+                type="pe.joshluque.papayin.movielist.MovieListViewModel"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
