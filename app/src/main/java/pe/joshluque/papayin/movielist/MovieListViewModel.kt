@@ -54,4 +54,8 @@ class MovieListViewModel(application: Application) : AndroidViewModel(applicatio
             }
         }
     }
+
+    fun displayMovieDetails(movie: Movie) {
+
+    }
 }

@@ -22,6 +22,10 @@ class MovieListFragment : Fragment() {
         val binding = FragmentMovieListBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        binding.rvMovie.adapter = MovieGridAdapter(MovieGridAdapter.OnClickListener {
+            viewModel.displayMovieDetails(it)
+        })
+
         return binding.root
     }
 

@@ -31,7 +31,10 @@ data class Movie(
     @Json(name = "video")
     val video: Boolean,
     @Json(name = "vote_average")
-    val vote_average: Double,
+    val voteAverage: Double,
     @Json(name = "vote_count")
-    val vote_count: Int
-) : Parcelable
+    val voteAount: Int
+) : Parcelable {
+    val posterUrl: String
+        get() = "http://image.tmdb.org/t/p/w185$posterPath"
+}
