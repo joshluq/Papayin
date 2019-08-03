@@ -48,7 +48,6 @@ fun displayWhenLoading(view: View, status: ApiStatus?) {
     }
 }
 
-
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
     imgUrl?.let {

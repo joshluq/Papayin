@@ -12,5 +12,7 @@ data class MovieDetail(
     @Json(name = "production_countries")
     val productionCountries: List<Country>,
     @Json(name = "release_date")
-    val releaseDate: String
+    val releaseDate: String,
+    @Json(name = "videos")
+    val videos: Video
 )

@@ -36,6 +36,21 @@
                     app:layout_constraintEnd_toEndOf="parent"/>
 
             <ImageView
+                    android:id="@+id/iv_play"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_play"
+                    android:alpha="0.6"
+                    android:onClick="@{() -> viewModel.onPlayTrailer()}"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginBottom="48dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_banner"
+                    app:layout_constraintTop_toTopOf="@+id/iv_banner"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_banner"
+                    app:layout_constraintStart_toStartOf="@+id/iv_banner"
+                    tools:ignore="ContentDescription"/>
+
+            <ImageView
                     android:id="@+id/iv_poster"
                     android:layout_width="100dp"
                     android:layout_height="150dp"
@@ -147,7 +162,7 @@
             <androidx.constraintlayout.widget.Group
                     android:visibility="gone"
                     app:hideWhenLoading="@{viewModel.status}"
-                    app:constraint_referenced_ids="tv_companies,tv_country,tv_date,tv_gender,tv_additional_info_title"
+                    app:constraint_referenced_ids="tv_companies,tv_country,tv_date,tv_gender,tv_additional_info_title,iv_play"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/information_group"/>

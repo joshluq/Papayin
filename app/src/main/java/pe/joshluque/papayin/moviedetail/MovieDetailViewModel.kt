@@ -10,6 +10,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import pe.joshluque.papayin.data.entity.Movie
 import pe.joshluque.papayin.data.entity.MovieDetail
+import pe.joshluque.papayin.data.entity.Result
 import pe.joshluque.papayin.data.network.Api
 import pe.joshluque.papayin.data.network.ApiStatus
 import pe.joshluque.papayin.moviedetail.domain.Repository
@@ -32,6 +33,10 @@ class MovieDetailViewModel(application: Application) : AndroidViewModel(applicat
     private val _movieDetail = MutableLiveData<MovieDetail>()
     val movieDetail: LiveData<MovieDetail>
         get() = _movieDetail
+
+    private val _trailer = MutableLiveData<Result>()
+    val trailer: LiveData<Result>
+        get() = _trailer
 
 
     fun setMovie(movie: Movie) {
@@ -59,6 +64,10 @@ class MovieDetailViewModel(application: Application) : AndroidViewModel(applicat
                 _movieDetail.value = null
             }
         }
+    }
+
+    fun onPlayTrailer() {
+        _trailer.value = _movieDetail.value!!.videos.trailer
     }
 
 }

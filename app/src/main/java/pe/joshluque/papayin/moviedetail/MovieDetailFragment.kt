@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import pe.joshluque.papayin.R
@@ -41,7 +42,16 @@ class MovieDetailFragment : Fragment() {
                 binding.tvCountry.text = String.format(getString(R.string.country_format), countries.joinToString(", "))
 
                 val companies = it.productionCompanies.map { company -> company.name }
-                binding.tvCompanies.text = String.format(getString(R.string.company_format), companies.joinToString(", "))
+                binding.tvCompanies.text =
+                    String.format(getString(R.string.company_format), companies.joinToString(", "))
+            }
+        })
+
+        viewModel.trailer.observe(this, Observer {
+            if (null != it) {
+                Toast.makeText(requireContext(), it.videoUrl, Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "this video has no trailers available", Toast.LENGTH_SHORT).show()
             }
         })
         return binding.root
