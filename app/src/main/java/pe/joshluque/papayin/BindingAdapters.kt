@@ -12,6 +12,10 @@ import com.bumptech.glide.request.RequestOptions
 import pe.joshluque.papayin.data.entity.Movie
 import pe.joshluque.papayin.data.network.ApiStatus
 import pe.joshluque.papayin.movielist.MovieGridAdapter
+import androidx.databinding.adapters.TextViewBindingAdapter.setText
+import android.widget.TextView
+import pe.joshluque.papayin.data.entity.Gender
+
 
 @BindingAdapter("startAnimationWhenLoading")
 fun startAnimationWhenLoading(view: LottieAnimationView, status: ApiStatus?) {
@@ -59,4 +63,12 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Movie>?) {
     val adapter = recyclerView.adapter as MovieGridAdapter
     adapter.submitList(data)
+}
+
+@BindingAdapter("gender")
+fun setGender(view: TextView, genders: List<Int>) {
+    val genderList = Gender.getGenders(genders).map {
+        it.value
+    }
+    view.text = String.format("genders : %s", genderList.joinToString(", "))
 }

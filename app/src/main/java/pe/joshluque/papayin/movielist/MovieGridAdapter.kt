@@ -22,28 +22,27 @@ class MovieGridAdapter(private val onClickListener: OnClickListener) :
         }
     }
 
-
-    class MovieViewHolder(private var binding: GridMovieItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(movie: Movie) {
-            binding.movie = movie
-            binding.executePendingBindings()
-        }
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         return MovieViewHolder(GridMovieItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val marsProperty = getItem(position)
-        holder.bind(marsProperty)
-        holder.itemView.setOnClickListener {
-            onClickListener.onClick(marsProperty)
+        holder.bind(getItem(position))
+    }
+
+
+    inner class MovieViewHolder(private var binding: GridMovieItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(movie: Movie) {
+            binding.movie = movie
+            binding.btnDetail.setOnClickListener {
+                onClickListener.onClick(movie)
+            }
+            binding.executePendingBindings()
         }
     }
 
-    class OnClickListener(val clickListener: (marsProperty: Movie) -> Unit) {
-        fun onClick(marsProperty: Movie) = clickListener(marsProperty)
+    class OnClickListener(val clickListener: (movie: Movie) -> Unit) {
+        fun onClick(movie: Movie) = clickListener(movie)
     }
 }
 

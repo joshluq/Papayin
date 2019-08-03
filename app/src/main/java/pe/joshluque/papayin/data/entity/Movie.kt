@@ -37,4 +37,7 @@ data class Movie(
 ) : Parcelable {
     val posterUrl: String
         get() = "http://image.tmdb.org/t/p/w185$posterPath"
+
+    val backdropUrl: String
+        get() = "http://image.tmdb.org/t/p/w500$backdropPath"
 }
