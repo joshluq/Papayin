@@ -17,6 +17,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:paddingBottom="32dp"
                 android:layout_height="wrap_content">
 
 
@@ -100,12 +101,10 @@
                     tools:text="@tools:sample/lorem"
                     android:layout_marginTop="8dp"
                     android:drawablePadding="8dp"
-                    app:gender="@{viewModel.movie.genreIds}"
                     android:textColor="@color/primaryColor"
                     android:drawableStart="@drawable/ic_local_movies"
                     app:layout_constraintTop_toBottomOf="@+id/tv_additional_info_title"
                     app:layout_constraintStart_toStartOf="@+id/tv_additional_info_title"/>
-
 
             <TextView
                     android:id="@+id/tv_date"
@@ -114,7 +113,6 @@
                     tools:text="@tools:sample/lorem"
                     android:drawablePadding="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="@{String.format(@string/date_format,viewModel.movie.releaseDate)}"
                     android:textColor="@color/primaryColor"
                     android:drawableStart="@drawable/ic_date"
                     app:layout_constraintTop_toBottomOf="@+id/tv_gender"
@@ -128,7 +126,6 @@
                     tools:text="@tools:sample/lorem"
                     android:drawablePadding="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="@{viewModel.movie.releaseDate}"
                     android:textColor="@color/primaryColor"
                     android:drawableStart="@drawable/ic_local_play"
                     app:layout_constraintTop_toBottomOf="@+id/tv_date"
@@ -142,11 +139,27 @@
                     tools:text="@tools:sample/lorem"
                     android:drawablePadding="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="@{viewModel.movie.releaseDate}"
                     android:textColor="@color/primaryColor"
                     android:drawableStart="@drawable/ic_camera_roll"
                     app:layout_constraintTop_toBottomOf="@+id/tv_country"
                     app:layout_constraintStart_toStartOf="@+id/tv_additional_info_title"/>
+
+            <androidx.constraintlayout.widget.Group
+                    android:visibility="gone"
+                    app:hideWhenLoading="@{viewModel.status}"
+                    app:constraint_referenced_ids="tv_companies,tv_country,tv_date,tv_gender,tv_additional_info_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/information_group"/>
+
+            <ProgressBar
+                    app:displayWhenLoading="@{viewModel.status}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_overview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

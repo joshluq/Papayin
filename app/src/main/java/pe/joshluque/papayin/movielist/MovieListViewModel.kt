@@ -45,10 +45,9 @@ class MovieListViewModel(application: Application) : AndroidViewModel(applicatio
 
     private fun getMovies() {
         coroutineScope.launch {
-            val getMoviesDeferred = repository.request
             try {
                 _status.value = ApiStatus.LOADING
-                val listResult = getMoviesDeferred.await()
+                val listResult = repository.getMovieListRequest(1)
                 _status.value = ApiStatus.DONE
                 _movies.value = listResult.movies
             } catch (e: Exception) {
