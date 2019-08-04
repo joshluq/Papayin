@@ -70,4 +70,8 @@ class MovieDetailViewModel(application: Application) : AndroidViewModel(applicat
         _trailer.value = _movieDetail.value!!.videos.trailer
     }
 
+    fun displayTrailerComplete() {
+        _trailer.value = null
+    }
+
 }

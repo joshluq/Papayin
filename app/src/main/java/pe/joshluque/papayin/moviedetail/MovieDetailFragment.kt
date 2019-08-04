@@ -12,13 +12,13 @@ import androidx.lifecycle.ViewModelProviders
 import pe.joshluque.papayin.R
 
 import pe.joshluque.papayin.databinding.FragmentMovieDetailBinding
+import pe.joshluque.papayin.trailer.TrailerActivity
 
 class MovieDetailFragment : Fragment() {
 
     private val viewModel: MovieDetailViewModel by lazy {
         ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,9 +49,8 @@ class MovieDetailFragment : Fragment() {
 
         viewModel.trailer.observe(this, Observer {
             if (null != it) {
-                Toast.makeText(requireContext(), it.videoUrl, Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireContext(), "this video has no trailers available", Toast.LENGTH_SHORT).show()
+                startActivity(TrailerActivity.newIntent(requireActivity(), it.key))
+                viewModel.displayTrailerComplete()
             }
         })
         return binding.root

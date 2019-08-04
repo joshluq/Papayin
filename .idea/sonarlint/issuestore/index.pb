@@ -30,3 +30,27 @@ y
 Iapp/src/main/java/pe/joshluque/papayin/moviedetail/MovieDetailFragment.kt,a/e/ae1b7d557dbbd30f2bb2f827fbefb772bfe0f052
 v
 Fapp/src/main/java/pe/joshluque/papayin/movielist/MovieListViewModel.kt,c/0/c0b707bbe17da87a2dcfdee175c16d8c5074a48f
+m
+=app/src/main/java/pe/joshluque/papayin/data/entity/Company.kt,2/e/2e40fa5c7ad1f3669e419aee2429be2d80bf26bc
+k
+;app/src/main/java/pe/joshluque/papayin/data/entity/Genre.kt,3/f/3fe83c5ce7eff4c8d4e7c1a30d6fcfe6c4edfc08
+w
+Gapp/src/main/java/pe/joshluque/papayin/moviedetail/domain/repository.kt,a/7/a700c2fce9a60b5fdbd50b34aa9c50df754c738b
+m
+=app/src/main/java/pe/joshluque/papayin/data/entity/Country.kt,6/8/68fa593f11377763196deafface26f8679532121
+k
+;app/src/main/java/pe/joshluque/papayin/data/entity/Video.kt,d/e/de570bbc719717657c9384c6b2930ed336e66616
+q
+Aapp/src/main/java/pe/joshluque/papayin/data/entity/MovieDetail.kt,6/d/6d740b98349a6f4ad0f2a886af561f4f4a6be38d
+l
+<app/src/main/java/pe/joshluque/papayin/data/entity/Result.kt,6/0/60f60daf2c76bfd49b185dc3e78349187cdb675f
+z
+Japp/src/main/java/pe/joshluque/papayin/moviedetail/MovieDetailViewModel.kt,6/b/6b6622111c3254153e567df6f9fa9a11a9ad0fdf
+F
+app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+G
+YouTubeApi/build.gradle,2/1/21536b173ed7d76e07109c11b8d8cb8fe51b7e1c
+q
+Aapp/src/main/java/pe/joshluque/papayin/trailer/TrailerActivity.kt,d/5/d5d479c09aacbf3d3e509483b3a100deccb8885a

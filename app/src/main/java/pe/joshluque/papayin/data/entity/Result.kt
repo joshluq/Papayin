@@ -13,7 +13,4 @@ data class Result(
     val site: String,
     @Json(name = "type")
     val type: String
-) {
-    val videoUrl: String
-        get() = "https://www.youtube.com/watch?v=$key"
-}
+)

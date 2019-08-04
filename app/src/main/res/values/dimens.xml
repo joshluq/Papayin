@@ -3,6 +3,6 @@
     <dimen name="toolbar_height">75dp</dimen>
     <dimen name="title_text_size">20sp</dimen>
     <dimen name="none">0dp</dimen>
-    <dimen name="fragment_margin_top">50dp</dimen>
+    <dimen name="fragment_margin_top">45dp</dimen>
     <dimen name="list_padding_top">25dp</dimen>
 </resources>
