@@ -30,6 +30,7 @@ class TrailerActivity : YouTubeBaseActivity() {
                     b: Boolean
                 ) {
                     youTubePlayer.cueVideo(videoId)
+                    youTubePlayer.play()
                 }
 
                 override fun onInitializationFailure(
