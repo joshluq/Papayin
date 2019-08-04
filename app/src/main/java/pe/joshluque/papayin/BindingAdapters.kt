@@ -1,6 +1,7 @@
 package pe.joshluque.papayin
 
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
@@ -66,4 +67,11 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Movie>?) {
     val adapter = recyclerView.adapter as MovieGridAdapter
     adapter.submitList(data)
+}
+
+@BindingAdapter("animation")
+fun setAnimation(view: View, isAnimate: Boolean) {
+    if (isAnimate) {
+        view.animation = AnimationUtils.loadAnimation(view.context, R.anim.move_down)
+    }
 }
