@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
             when (destination.id) {
+                R.id.splashFragment -> {
+                    binding.ivToolbar.visibility = View.GONE
+                    binding.tvTitleToolbar.visibility = View.VISIBLE
+                    binding.tvTitleToolbar.text = getString(R.string.app_name)
+                }
                 R.id.movieListFragment -> {
                     binding.ivToolbar.visibility = View.VISIBLE
                     binding.tvTitleToolbar.visibility = View.GONE
